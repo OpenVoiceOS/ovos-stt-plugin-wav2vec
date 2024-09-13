@@ -3,3 +3,4 @@ ovos-utils~=0.0,>=0.0.30
 SpeechRecognition~=3.8
 transformers
 torch
+langcodes

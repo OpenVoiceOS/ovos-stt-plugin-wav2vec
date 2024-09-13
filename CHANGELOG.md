@@ -1,12 +1,12 @@
 # Changelog
 
-## [0.2.0a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-wav2vec2/tree/0.2.0a1) (2024-09-12)
+## [0.2.1a1](https://github.com/OpenVoiceOS/ovos-stt-plugin-wav2vec2/tree/0.2.1a1) (2024-09-13)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-wav2vec2/compare/0.1.0...0.2.0a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-stt-plugin-wav2vec2/compare/0.2.0...0.2.1a1)
 
 **Merged pull requests:**
 
-- feat:language\_support [\#1](https://github.com/OpenVoiceOS/ovos-stt-plugin-wav2vec2/pull/1) ([JarbasAl](https://github.com/JarbasAl))
+- fix:standardize\_lang\_codes [\#3](https://github.com/OpenVoiceOS/ovos-stt-plugin-wav2vec2/pull/3) ([JarbasAl](https://github.com/JarbasAl))
 
 
 
