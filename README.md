@@ -23,13 +23,14 @@ OVOS plugin for [Wav2Vec2](https://ai.meta.com/blog/wav2vec-20-learning-the-stru
 
 ### Models
 
-Supported languages: `'ab'`, `'ar'`, `'as'`, `'ba'`, `'bas'`, `'bg'`, `'bn'`, `'br'`, `'ca'`, `'cnh'`, `'cv'`, `'cy'`, 
-`'cz'`, `'da'`, `'de'`, `'el'`, `'en'`, `'eo'`, `'es'`, `'fa'`, `'fi'`, `'fr'`, `'ga'`, `'gl'`, 
-`'gn'`, `'ha'`, `'he'`, `'hi'`, `'hk'`, `'hu'`, `'hy'`, `'ia'`, `'id'`, `'it'`, `'jp', 
-'jv'`, `'ka'`, `'ko'`, `'ku'`, `'ky'`, `'lb'`, `'lg'`, `'lt'`, `'ml'`, `'mn'`, 
-`'mr'`, `'mt'`, `'ne'`, `'nl'`, `'or'`, `'pa'`, `'pl'`, `'pt'`, `'rm-sursilv'`, `'rm-vallader'`, `'ro'`, `'ru'`, `'sah'`, `'sk'`, `'sl'`, `'su'`,
-`'sv'`, `'sw'`, `'ta'`, `'te'`, `'tr'`,
-`'tt'`, `'uk'`, `'ur'`, `'vi'`, `'zh'`
+> If your language is not supported you can use `"facebook/mms-1b-all"`, but in that case check out the dedicated plugin [ovos-stt-plugin-mms](https://github.com/OpenVoiceOS/ovos-stt-plugin-mms)
+
+Supported languages: `'ab'`, `'ar'`, `'as'`, `'ba'`, `'bas'`, `'bg'`, `'bn'`, `'br'`, `'ca'`, `'cnh'`, `'cv'`, `'cy'`,
+`'cz'`, `'da'`, `'de'`, `'el'`, `'en'`, `'eo'`, `'es'`, `'fa'`, `'fi'`, `'fr'`, `'ga'`, `'gl'`,  `'gn'`, `'ha'`, `'he'`,
+`'hi'`, `'hk'`, `'hu'`, `'hy'`, `'ia'`, `'id'`, `'it'`, `'jp'`,  `'jv'`, `'ka'`, `'ko'`, `'ku'`, `'ky'`, `'lb'`, `'lg'`,
+`'lt'`, `'ml'`, `'mn'`, `'mr'`, `'mt'`, `'ne'`, `'nl'`, `'or'`, `'pa'`, `'pl'`, `'pt'`, `'rm-sursilv'`, `'rm-vallader'`, 
+`'ro'`, `'ru'`, `'sah'`, `'sk'`, `'sl'`, `'su'`, `'sv'`, `'sw'`, `'ta'`, `'te'`, `'tr'`, `'tt'`, `'uk'`, `'ur'`, `'vi'`, `'zh'`
+
 
 ```python
 LANG2MODEL = {
