@@ -6,18 +6,7 @@ import torchaudio
 from ovos_plugin_manager.templates.stt import STT
 from speech_recognition import AudioData
 from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
-
-
-def standardize_lang_tag(lang_code, macro=True):
-    """https://langcodes-hickford.readthedocs.io/en/sphinx/index.html"""
-    # TODO - move to ovos-utils
-    try:
-        from langcodes import standardize_tag as std
-        return std(lang_code, macro=macro)
-    except:
-        if macro:
-            return lang_code.split("-")[0].lower()
-        return lang_code.lower()
+from ovos_utils.lang import standardize_lang_tag
 
 
 class Wav2VecSTT(STT):
@@ -148,6 +137,8 @@ class Wav2VecSTT(STT):
             raise ValueError(f"'lang' {lang} not supported, a 'model' needs to be explicitly set in config file")
         self.processor = Wav2Vec2Processor.from_pretrained(model)
         self.asr_model = Wav2Vec2ForCTC.from_pretrained(model)
+        if self.config.get("use_cuda"):
+            self.asr_model.to("cuda")
 
     @property
     def available_languages(self) -> set:
@@ -161,6 +152,8 @@ class Wav2VecSTT(STT):
             resampler = torchaudio.transforms.Resample(sample_rate, 16000)
             waveform = resampler(waveform)
         inputs = self.processor(waveform.squeeze().numpy(), sampling_rate=16_000, return_tensors="pt", padding=True)
+        if self.config.get("use_cuda"):
+            inputs = inputs.to("cuda")
         with torch.no_grad():
             logits = self.asr_model(inputs.input_values, attention_mask=inputs.attention_mask).logits
         predicted_ids = torch.argmax(logits, dim=-1)
